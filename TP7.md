@@ -186,3 +186,63 @@ trap "echo 'OK, je fais un peu de ménage avant'; test -a tmp.txt && rm tmp.txt;
 ## Exercice 4. Surveillance de l’activité du système
 
 ### 1.
+
+La commande *w*affiche les utilisateurs présents sur le système et leur activité.
+
+### 2.
+
+Afin d'afficher l'historique des dernières connexions à la machine on utilise la commande *last*
+
+### 3.
+
+Pour connaître la version du noyau en cours d'utilisation on peut utliser les commande 
+
+```
+uname -mr
+ou
+cat /proc/version
+```
+
+### 4.
+
+Pour récupérer toutes les informations sur le processeur au format JSON on utilise la commande 
+```bash
+lscpu -J
+```
+
+### 5.
+
+Pour obtenir la liste des derniers démarrages de la machine avec la commande journalctl on utilise l'option  *--list-boots*
+```bash
+journalctl --list-boots
+```
+Pour afficher tout ce qu’il s’est passé sur la machine lors de l’avant-dernier boot on utilise a commande
+
+```bash
+journalctl --boots
+```
+
+### 6.
+
+Pour prevenir les utilisateurs lors d'une connexion à la machine on édite le fichier */etc/motd* en ajoutant la ligne indiquant l'évènement le message apparaîtra après que l'utilisateur se soit connecté.
+
+Pour que le message soit affiché avant l’invite de saisie de login il faut mettre le message dans le fichier */etc/issue*
+
+### 7.
+
+```bash    
+                     #!/bin/bash
+u0=1
+u1=1
+
+echo "Les $1 premiers termes de la serie sont  "
+
+for (( i=0; i<$1; i++ ))
+do
+    echo -n "$u0"
+    un=$((u0 + u1))
+    u0=$u1
+    u1=$un
+done
+```
+On observe la monté en charge du système grace a la representation graphique que fourni tload. A l'arret du programme avec CTRL+C la charge moyenne dy stème redescend. 

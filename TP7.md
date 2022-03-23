@@ -246,3 +246,32 @@ do
 done
 ```
 On observe la monté en charge du système grace a la representation graphique que fourni tload. A l'arret du programme avec CTRL+C la charge moyenne dy stème redescend. 
+
+### Commande 
+
+iftop : examine le transit réseau
+glances : moniteur de ressources
+
+ |       Commande       |                                                                                                Actions |
+ | :------------------: | -----------------------------------------------------------------------------------------------------: |
+ |       who / w        |                                                                       qui est connecté / qui fait quoi |
+ |         last         |                                                               historique des connexions sur la machine |
+ |        tload         |                                                                           affiche la charge du système |
+ | dmesg (-T)(-lerr -k) | affiche les messages en provenance du noyau (affiche date) (affiche message d'erreurs venant du noyau) |
+ |        sysctl        |                                    permet d’afficher et de configurer les paramètres du noyau(à chaud) |
+ |       hostname       |                                                                        affiche le nom de la ma   chine |
+ |        uname         |                                            affiche des informations sur le système (version du noyau…) |
+ |         lshw         |                                                                                      liste le matériel |
+ |        lsusb         |                                                                            liste les périphériques USB |
+ |          at          |                                                                           execute une tâche en différé |
+
+ #### Cron
+
+ |                          Commande                          |
+ | :--------------------------------------------------------: |
+ | minute heure jour du mois mois  jour de la semainecommande |
+
+Afficher (supprimer, éditer) une crontab 
+```
+crontab -l (-r -e) [-u user]
+```

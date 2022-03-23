@@ -43,7 +43,7 @@
 
 ## 2.
 
-Pour visualiser lkes interfaces on utilise la commande : 
+Pour visualiser les interfaces on utilise la commande : 
 ```bash
     ip link sh
 ```

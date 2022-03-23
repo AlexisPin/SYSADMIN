@@ -90,3 +90,10 @@ Ce s indique que ce programme est exécuté avec les droits de son propriétaire
 - chmod 4755 fichier # pour activer le setuid
 - chmod 6755 fichier # pour activer les setuid et setgid
 ```
+
+#### sudo 
+
+La commande sudo mémorise 15 monutes le mot de passe 
+La commande sudo -k permet d'oublier le mot de passe 
+sudo -i : lance un nouveau shell avec l’environnement de l’utilisateur cible (root)
+sudo -s : lance un nouveau shell avec l’environnement de l’utilisateur original

@@ -1,5 +1,17 @@
 # **TP 2 – Bash**
 
+Rediriger plusieurs sorties : 
+*$ commande 1> fichier1 2> fichier2*
+
+### #!/bin/bash
+La séquence #! est appelée shebang : elle indique à l’OS que le fichier est un
+script. Juste derrière, on indique le chemin vers un interpréteur capable
+d’exécuter le script
+
+Pour que la création ou la modification d’une variable soit permanente, il faut
+ajouter la commande au fichier ~/.bashrc 1 qui est lu à chaque démarrage de
+bash
+
 ## Exercice 1 :
 
 ### 1. printenv PATH : /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin

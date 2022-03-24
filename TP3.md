@@ -93,7 +93,41 @@ Ce s indique que ce programme est exécuté avec les droits de son propriétaire
 
 #### sudo 
 
-La commande sudo mémorise 15 monutes le mot de passe 
+La commande sudo mémorise 15 minutes le mot de passe 
 La commande sudo -k permet d'oublier le mot de passe 
 sudo -i : lance un nouveau shell avec l’environnement de l’utilisateur cible (root)
 sudo -s : lance un nouveau shell avec l’environnement de l’utilisateur original
+
+### fichier /etc/shadow
+
+Fichier contenant les mots de passe chiffrés ; 9 champs séparés par ’ :’
+
+
+### Fichiers /etc/group et /etc/gshadow
+
+Contiennent la liste des utilisateurs appartenant aux différents groupes, et les
+mots de passe de groupes.
+Format :
+- nom du groupe
+- champ special
+- numero de groupe
+- liste des membres 
+  
+Un utilisateur peut appartenir à plusieurs groupes ; lorsqu’il se connecte, il
+appartient au groupe primaire spécifié dans /etc/passwd.
+
+### Gestion des comptes et des mots de passe
+
+- Forcer une utilisateur à changer son mot de passe   
+***passwd -e nom_utilisateur***  
+
+- Verrouiller un mot de passe  
+***passwd -l nom_utilisateur***   
+
+- Verrouiller un compte : mettre une date d’expiration passée  
+ ***usermod --expiredate 0 nom_utilisateur  
+ chage --expiredate 0 nom_utilisateur***    
+
+- Réactiver un compte : mettre ”” ou -1   
+  ***usermod --expiredate "" nom_utilisateur    
+  chage --expiredate -1 nom_utilisateur***

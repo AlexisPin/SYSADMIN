@@ -1,7 +1,7 @@
 # **TP 3 - Utilisateurs, groupes et permissions Installation de paquets**
 
 
-useradd -m  -s : création user avec répertoire personnel et bash piur shell
+***useradd -m  -s*** : création user avec répertoire personnel et bash piur shell
 
 Pour connaître tous les utilisateurs / tous les groupes, il faut regarder la première
 colonne des fichiers /etc/passwd / /etc/group
@@ -131,3 +131,29 @@ appartient au groupe primaire spécifié dans /etc/passwd.
 - Réactiver un compte : mettre ”” ou -1   
   ***usermod --expiredate "" nom_utilisateur    
   chage --expiredate -1 nom_utilisateur***
+
+
+Il faut utiliser les commandes usermod / groupmod :
+- modifier le login d’un utilisateur :
+***sudo usermod -l newUsername oldUsername***
+- déplacer le dossier HOME de l’utilisateur :
+***sudo usermod -m -d newHomedir username***
+- modifier le groupe primaire d’un utilisateur :
+***sudo usermod batman -g avengers***
+- modifier le nom d’un groupe :
+***sudo groupmod -n newGroupName oldGroupName***
+- modifier l’identifiant d’un groupe :
+***sudo groupmod -g newID groupName***
+
+Pour modifier les informations associées à un utilisateur (nom complet,
+téléphone, numéro de bureau…), on utilise chfn (CHange Full Name) :
+***sudo chfn johndoe -f Johnny***
+
+- Ajouter un utilisateur existant à un groupe (secondaire) existant :
+***usermod -a -G nom_groupe nom_utilisateur***
+- Modifier le groupe primaire d’un utilisateur :
+***usermod -g nom_groupe nom_utilisateur***
+- Ajouter un nouvel utilisateur et spécifier son groupe primaire (existant) :
+***useradd -g nom_groupe nom_utilisateur***
+- Ajouter un nouvel utilisateur et spécifier un groupe secondaire (existant) :
+***useradd -G nom_groupe nom_utilisateur***
